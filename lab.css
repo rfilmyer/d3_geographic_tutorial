@@ -58,7 +58,7 @@ path {
 path.arc {
   stroke-dasharray: 20;
   /* stroke-dashoffset: 1000;*/
-  animation: dash 45s linear;
+  animation: dash 45s linear infinite;
 }
 
 @keyframes dash {
