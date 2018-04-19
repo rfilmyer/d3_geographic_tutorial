@@ -1,3 +1,7 @@
+body{
+  background-color: black
+}
+
 h2 {
   position:absolute;
   bottom: 25%;
@@ -6,13 +10,15 @@ h2 {
   font-family: sans-serif;
   font-style: normal;
   font-weight: normal; 
-  opacity: 0.7
+  opacity: 0.7;
+  color: #fff;
 }
 
 path.arc {
   pointer-events: none;
   fill: none;
-  stroke: #000;
+  stroke: white;
+  stroke-width: 2px;
   display: none;
 }
 
@@ -26,13 +32,14 @@ path.cell {
 }
 
 .land {
-  fill: none;
+  fill: #050505;
   stroke: lightgrey;
 }
 
 .state-boundary {
   fill: none;
-  stroke: lightgrey;
+  stroke: slategrey;
+  stroke-width: 1px;
 }
 
 #cells.voronoi path.cell {
@@ -44,4 +51,28 @@ path {
   stroke: none;
   stroke-linejoin: round;
   stroke-linecap: round;
+}
+
+/* cool animation bois */
+
+path.arc {
+  stroke-dasharray: 20;
+  /* stroke-dashoffset: 1000;*/
+  animation: dash 45s linear;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+}
+
+
+.land, .state-boundary, #circles {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
